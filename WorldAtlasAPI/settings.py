@@ -13,21 +13,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import environ
 import django_heroku
-import dotenv 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
-env = environ.Env()
-environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-dotenv_file = os.path.join(BASE_DIR, "WorldAtlasAPI/.env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -41,7 +34,6 @@ DEBUG = False
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4)5xr6esyc!$d4qw55m=g58=5=ek-!uu9^)5*4yas!i+dhet@i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
