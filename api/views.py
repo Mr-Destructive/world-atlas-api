@@ -1,11 +1,147 @@
 from rest_framework import generics,status
-from .models import A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z#Room 
+from .models import A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import JsonResponse
+from django.core import serializers
 from rest_framework.decorators import api_view
+import random
 
 # Create your views here.
+
+class getPlace(APIView):
+    def get(self, request, letter):
+        if letter == 'a':
+            place = list(A.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['a']})
+
+        if letter == 'b':
+            place = list(B.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['b']})
+
+        if letter == 'c':
+            place = list(C.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['c']})
+
+        if letter == 'd':
+            place = list(D.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['d']})
+
+        if letter == 'e':
+            place = list(E.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['e']})
+
+        if letter == 'f':
+            place = list(F.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['f']})
+
+        if letter == 'g':
+            place = list(G.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['g']})
+
+        if letter == 'h':
+            place = list(H.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['h']})
+
+        if letter == 'i':
+            place = list(I.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['i']})
+
+        if letter == 'j':
+            place = list(J.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['j']})
+
+        if letter == 'k':
+            place = list(K.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['k']})
+
+        if letter == 'l':
+            place = list(L.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['l']})
+
+        if letter == 'm':
+            place = list(M.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['m']})
+
+        if letter == 'n':
+            place = list(N.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['n']})
+
+        if letter == 'o':
+            place = list(O.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['o']})
+
+        if letter == 'p':
+            place = list(P.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['p']})
+
+        if letter == 'q':
+            place = list(Q.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['q']})
+
+        if letter == 'r':
+            place = list(R.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['r']})
+
+        if letter == 's':
+            place = list(S.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['s']})
+
+        if letter == 't':
+            place = list(T.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['t']})
+
+        if letter == 'u':
+            place = list(U.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['u']})
+
+        if letter == 'v':
+            place = list(V.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['v']})
+
+        if letter == 'w':
+            place = list(W.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['w']})
+
+        if letter == 'x':
+            place = list(X.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['x']})
+
+        if letter == 'y':
+            place = list(Y.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['y']})
+
+        if letter == 'z':
+            place = list(Z.objects.values())
+            place = random.choice(place)
+            return JsonResponse({letter:place['z']})
+
+
 class ifPlace(APIView):
     def get(self, request, place):
         if place[0] == 'a':
