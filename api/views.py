@@ -427,7 +427,7 @@ class getList(APIView):
             return JsonResponse({letter:place})
 
         if letter == 'f':
-            place = list(f.objects.values_list('f',flat=True))
+            place = list(F.objects.values_list('f',flat=True))
             return JsonResponse({letter:place})
 
         if letter == 'g':
