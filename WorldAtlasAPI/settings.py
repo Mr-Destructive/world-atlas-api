@@ -16,19 +16,12 @@ import dj_database_url
 import django_heroku
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-
-
+import os
+from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+load_dotenv(os.path.join(BASE_DIR, 'WorldAtlasAPI\.env'))
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG=True
 
 ALLOWED_HOSTS = ['herokuapp.com', '127.0.0.1','localhost:8000']
 
@@ -43,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +128,4 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ORIGIN_WHITELIST ='http://127.0.0.1:8000', 'https://mr-destructive.github.io', 'https://world-atlas-dj.herokuapp.com/',
