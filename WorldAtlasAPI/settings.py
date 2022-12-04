@@ -12,15 +12,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
-import django_heroku
 from pathlib import Path
 
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(os.path.join(BASE_DIR, 'WorldAtlasAPI\.env'))
-SECRET_KEY = os.getenv("SECRET_KEY")
+#load_dotenv(os.path.join(BASE_DIR, 'WorldAtlasAPI\.env'))
+SECRET_KEY = "django-insecure-wy(xk%sg3y98=d9p58xm7joln^-mno!7v5(43o#20#5!)bn@=5"
 DEBUG=True
 
 ALLOWED_HOSTS = ['herokuapp.com', '127.0.0.1','localhost:8000']
@@ -124,9 +122,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ORIGIN_WHITELIST ='http://127.0.0.1:8000', 'https://mr-destructive.github.io', 'https://world-atlas-dj.herokuapp.com/',
+#CORS_ORIGIN_WHITELIST ='http://127.0.0.1:8000', 'https://mr-destructive.github.io', 'https://world-atlas-dj.herokuapp.com/',
